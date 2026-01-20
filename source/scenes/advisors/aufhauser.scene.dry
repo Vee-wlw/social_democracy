@@ -16,8 +16,8 @@ Aufhäuser ist Vorsitzender des AfA-Bund, der Bund sozialdemokratischer Angestel
 - @root: Return to main
 
 @white_collar
-title: Organizing white-collar workers
-subtitle: Improve our standing among the new middle class.
+title: Angestellte organisieren.
+subtitle: Wahlkampf in der neuen Mittelklasse führen.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
 on-arrival: advisor_action_timer = 6; new_middle_spd += 6*(1-dissent);
@@ -25,8 +25,8 @@ on-arrival: advisor_action_timer = 6; new_middle_spd += 6*(1-dissent);
 Wir haben unsere Organisierung unter Angestellten erhöht.
 
 @union_unity
-title: Union-party coordination
-subtitle: Reduce dissent among the unions.
+title: Gewerkschaft-Partei Koordination
+subtitle: Reduziere Dissens innerhalb der Gewerkschaften.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; labor_dissent -= 10;
@@ -34,16 +34,16 @@ on-arrival: advisor_action_timer = 6; labor_dissent -= 10;
 Wir haben Dissens mit der Gewerkschafts-Fraktion verringert
 
 @crisis
-title: Addressing the economic crisis
-subtitle: Aufhäuser can help support a left-wing economic program.
+title: Die Wirtschaftskrise behandeln
+subtitle: Aufhäuser kann helfen ein Wirtschaftsprogramm des linken Flügel zu unterstützen.
 choose-if: advisor_action_timer <= 0 and nationalization_adopted == 0 and black_thursday_seen == 1 and nationalization_support <= 3
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if nationalization_adopted > 0 : We have already adopted the Left plan. ?]
 on-arrival: advisor_action_timer = 6; 
 go-to: crisis_program.support_left 
 
 @moderate_economic_plan
-title: Support the reformist economic plan
-subtitle: Aufhäuser can also support a moderate economic plan.
+title: Den reformistischen Wirtschaftsplan unterstützen.
+subtitle: Aufhäuser kann auch das moderate Wirtschaftsprogramm unterstützen.
 choose-if: advisor_action_timer = 0 and moderate_plan_adopted = 0 and black_thursday_seen = 1
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if moderate_economic_plan = 0 : We have already adopted the reformist economic plan. ?] [? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
 on-arrival: advisor_action_timer = 6
