@@ -7,7 +7,7 @@ new-page: true
 
 = Siegfried Aufhäuser
 
-Aufhäuser is a leader of the AfA-Bund, the federation of socialist white-collar trade unions.
+Aufhäuser ist Vorsitzender des AfA-Bund, der Bund sozialdemokratischer Angestellter
 
 - @white_collar
 - @union_unity
@@ -22,7 +22,7 @@ choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
 on-arrival: advisor_action_timer = 6; new_middle_spd += 6*(1-dissent);
 
-We have increased our organizing among white-collar workers.
+Wir haben unsere Organisierung unter Angestellten erhöht.
 
 @union_unity
 title: Union-party coordination
@@ -31,7 +31,7 @@ choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
 on-arrival: advisor_action_timer = 6; labor_dissent -= 10;
 
-We have reduced tensions with the Labor faction.
+Wir haben Dissens mit der Gewerkschafts-Fraktion verringert
 
 @crisis
 title: Addressing the economic crisis
