@@ -15,8 +15,8 @@ Baade ist einer der wenigen Landwirtschaftsexperten in der SPD, und ein unorthod
 - @root: Return to main
 
 @agriculture
-title: Agricultural Policy
-subtitle: Baade is the Minister of Agriculture.
+title: Landwirtschaftspolitik
+subtitle: Baade ist Landwirtschaftsminister.
 choose-if: advisor_action_timer <= 0 and spd_in_government and agriculture_minister_party == "SPD"
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not in government. ?][? if agriculture_minister_party != "SPD": The SPD does not have the Agriculture Ministry. ?]
 on-arrival: advisor_action_timer = 6; agricultural_policy_timer -= 6; last_advisor_action = 1
@@ -24,8 +24,8 @@ go-to: agricultural_policy
 
 
 @rural_campaign
-title: Rural Campaign
-subtitle: Try to campaign among the rural populace.
+title: Ländliche Kampagne
+subtitle: Versuche Wahlkampf unter der ländlichen Bevölkerung zu machen.
 choose-if: advisor_action_timer == 0 and rural_policy > 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if rural_policy == 0 : We have not enacted any rural policies. ?]
 on-arrival: advisor_action_timer = 6; rural_spd += 5*(1-dissent); peoples_party_support += 1
@@ -33,8 +33,8 @@ on-arrival: advisor_action_timer = 6; rural_spd += 5*(1-dissent); peoples_party_
 Wir haben unsere Kampagne unter Farmern und der ländlichen Bevölkerung unterstützt.
 
 @depression
-title: Addressing the economic crisis
-subtitle: Formulate a plan to rescue us from the economic crisis.
+title: Die Wirtschaftskrise behandeln
+subtitle: Formuliere ein Programm gegen die Wirtschaftskrise.
 choose-if: advisor_action_timer <= 0 and wtb_adopted = 0 and black_thursday_seen
 unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
 on-arrival: advisor_action_timer = 6; wtb_support += 2; center_dissent += 10; labor_strength += 1
