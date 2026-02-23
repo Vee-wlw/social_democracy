@@ -1,20 +1,20 @@
-title: Next month
+title: Nächster Monat
 set-bg: img/map_2.jpg
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
-    Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    Q.pinnedCardsDescription = 'Berater - eine Aktion ist verfügbar.';
 } else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    Q.pinnedCardsDescription = 'Berater - nächste Aktion ist in 1 Monat verfügbar.';
 } else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    Q.pinnedCardsDescription = 'Berater - nächste Aktion ist in ' + Q.advisor_action_timer + ' Monate verfügbar';
 }
 !}
 max-cards: 3
 
-#Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
+#Hier wird das Hauptdeck gezeigt. Durchs Klicken auf den Kartenstapel ziehst du eine Karte auf die Hand. Eine Karte wird durchs klicken aktiviert.
 
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+[? if year = 1928 and month = 2 : Die derzeitige bourgeois-rechte Regierung ist kollabiert. Die nächsten Wahlen finden im Mai diesen Jahres statt. ?]
 
 - @party
 - @govt
@@ -26,18 +26,18 @@ set-bg: img/map_2.jpg
 is-hand: true
 on-arrival: {!
 if (Q.advisor_action_timer <= 0) {
-    Q.pinnedCardsDescription = 'Advisors - an action is available.';
+    Q.pinnedCardsDescription = 'Berater - eine Aktion ist verfügbar.';
 } else if (Q.advisor_action_timer == 1) {
-    Q.pinnedCardsDescription = 'Advisors - next action available in 1 month.';
+    Q.pinnedCardsDescription = 'Berater - nächste Aktion ist in 1 Monat verfügbar.';
 } else {
-    Q.pinnedCardsDescription = 'Advisors - next action available in ' + Q.advisor_action_timer + ' months.';
+    Q.pinnedCardsDescription = 'Berater - nächste Aktion ist in ' + Q.advisor_action_timer + ' Monate verfügbar';
 }
 !}
 max-cards: 4
 
-#Here, the main deck will be displayed. Clicking on the deck draws a card into your hand. Clicking on a card activates that card.
+#Hier wird das Hauptdeck gezeigt. Durchs Klicken auf den Kartenstapel ziehst du eine Karte auf die Hand. Eine Karte wird durchs klicken aktiviert.
 
-[? if year = 1928 and month = 2 : The current bourgeois-right government has fallen. The next elections are slated for May of this year. ?]
+[? if year = 1928 and month = 2 : Die derzeitige bourgeois-rechte Regierung ist kollabiert. Die nächsten Wahlen finden im Mai diesen Jahres statt. ?]
 
 - @party
 - @govt
@@ -46,14 +46,14 @@ max-cards: 4
 
 
 @party
-title: Party Affairs
+title: Parteiarbeit
 card-image: img/Vorwaerts_nr_1.png
 is-deck: true
 
 - #party_affairs
 
 @govt
-title: Government Affairs
+title: Regierungsarbeit
 view-if: time >= 6
 card-image: img/reichstag_2.jpg
 is-deck: true
