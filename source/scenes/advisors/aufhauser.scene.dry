@@ -7,7 +7,7 @@ new-page: true
 
 = Siegfried Aufhäuser
 
-Aufhäuser ist ein Vorsitzender des AfA-Bunds, der Föderation der sozialdemokratische Beamtengewerkschaften.
+Aufhäuser ist ein Vorsitzender des AfA-Bunds(Allgemeiner Frei Angestelltenbund), welcher sozialdemokratische und linksliberale Beamte beinhaltete.
 
 - @white_collar
 - @union_unity
@@ -16,36 +16,36 @@ Aufhäuser ist ein Vorsitzender des AfA-Bunds, der Föderation der sozialdemokra
 - @root: Return to main
 
 @white_collar
-title: Organizing white-collar workers
-subtitle: Improve our standing among the new middle class.
+title: Beamte organisieren.
+subtitle: Unsere Stellung in der neuen Mittelklasse verbessern.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] 
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?] 
 on-arrival: advisor_action_timer = 6; new_middle_spd += 6*(1-dissent);
 
-We have increased our organizing among white-collar workers.
+Wir organisieren uns vermehrt innerhalb der neuen Mittelklasse.
 
 @union_unity
-title: Union-party coordination
-subtitle: Reduce dissent among the unions.
+title: Gewerkschaft-Partei Koordination
+subtitle: Reduziere die Abtrünnigkeit der Gewerkschaften.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?]
 on-arrival: advisor_action_timer = 6; labor_dissent -= 10;
 
-We have reduced tensions with the Labor faction.
+Wir haben Spannung mit der Gewerkschaftsfraktion reduziert.
 
 @crisis
-title: Addressing the economic crisis
-subtitle: Aufhäuser can help support a left-wing economic program.
+title: Die Wirtschaftskrise angehen.
+subtitle: Aufhäuser kann eine linke Wirtschaftspolitik unterstützen.
 choose-if: advisor_action_timer <= 0 and nationalization_adopted == 0 and black_thursday_seen == 1 and nationalization_support <= 3
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if nationalization_adopted > 0 : We have already adopted the Left plan. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?][? if black_thursday_seen == 0 : Wir befinden uns gerade nicht in einer Wirtschaftskrise. ?][? if nationalization_adopted > 0 : Wir haben schon eine linke Wirtschaftspolitik angenommen. ?]
 on-arrival: advisor_action_timer = 6; 
 go-to: crisis_program.support_left 
 
 @moderate_economic_plan
-title: Support the reformist economic plan
-subtitle: Aufhäuser can also support a moderate economic plan.
+title: Den reformistischen Wirtschaftsplan unterstützen.
+subtitle: Aufhäuser kann auch eine reformistische Wirtschaftspolitik unterstützen.
 choose-if: advisor_action_timer = 0 and moderate_plan_adopted = 0 and black_thursday_seen = 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if moderate_economic_plan = 0 : We have already adopted the reformist economic plan. ?] [? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?] [? if moderate_economic_plan = 0 : Wir haben schon den reformistischen Wirtschaftsplan angenommen. ?] [? if black_thursday_seen == 0 : Wir befinden uns gerade nicht in einer Wirtschaftskrise. ?]
 on-arrival: advisor_action_timer = 6
 go-to: crisis_program.support_moderate
 
