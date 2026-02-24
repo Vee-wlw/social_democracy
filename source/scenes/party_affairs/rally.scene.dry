@@ -1,4 +1,4 @@
-title: Political Rally
+title: Wahlkundgebung
 new-page: true
 is-card: true
 tags: party_affairs
@@ -9,12 +9,12 @@ go-to: main_rally; sa_disrupt if sa_strength > 180 and not sa_banned and not ret
 
 @sa_disrupt
 
-The Nazi SA has disrupted our rally! Their street troops are preventing us from meeting.
+Die SA versucht unseren Wahlkampf zu stören. Ihre Straßenkämpfer haben unsere Kundgebung angegriffen.
 
-- @police_protect: Call the police to protect our rally.
-- @rb_protect: Use the Reichsbanner to protect our rally.
-- @both_protect: The police and Reichsbanner should work together to protect our rally.
-- @cancel: Cancel the rally.
+- @police_protect: Ruft die Polizei zur hilfe. Call the police to protect our rally.
+- @rb_protect: Der Reichsbanner könnte die Kundgebung beschützen.
+- @both_protect: Die Polizei und der Reichsbanner könnten zusammenarbeiten um die Kundgebung zu schützen?
+- @cancel: Löst die Kundgebung auf.
 
 @police_protect
 view-if: spd_prussia == 1
@@ -24,12 +24,11 @@ go-to: police_protect_win if police_protect_success >= 0; police_protect_lose if
 @police_protect_win
 go-to: main_rally
 
-The police successfully protected our rally, so it can go ahead as usual.
-
+Die Polizei hat unsere Kundgebung beschützt. Unser Treffen kann stattfinden.
 @police_protect_lose
 on-arrival: strife += 1; workers_nsdap += 3
 
-Unfortunately, the police were unable or unwilling to hold back the SA mob. The Nazis have won this show of strength.
+Leider konnte oder wollte die Polizei die SA nicht zurückhalten. Die Nazis haben diesmal gewonnen.
 
 @rb_protect
 on-arrival: rb_success = rb_strength*rb_militancy - sa_strength*sa_militancy; strife += 1
@@ -38,39 +37,39 @@ go-to: rb_protect_win if rb_success >= 0; rb_protect_lose if rb_success < 0
 @rb_protect_win
 go-to: main_rally
 
-The Reichsbanner has successfully protected our rally against the SA! Our meeting can go ahead as usual.
+Der Reichsbanner konnte unsere Kundgebung vor der SA beschützen! Unsere Kundgebung kann stattfinden.
 
 @rb_protect_lose
 on-arrival: workers_nsdap += 3; rb_strength -= 50
 
-Unfortunately, the Reichsbanner was not able to hold back the SA mob. The Nazis have won this show of strength.
+Leider konnte der Reichsbanner die SA nicht zurückhalten. Die Nazis haben diesmal gewonnen.
 
 @both_protect
 view-if: spd_prussia
 choose-if: prussian_police_training > 0
-unavailable-subtitle: The loyal sections of the police have never coordinated with the Reichsbanner before.
+unavailable-subtitle: Die treuen Teile der Polizei haben noch nie mit dem Reichsbanner zusammengearbeitet.
 on-arrival: rb_success = rb_strength*rb_militancy - sa_strength*sa_militancy + prussian_police_loyalty*prussian_police_militancy*prussian_police_strength*2; strife += 1
 go-to: both_protect_win if rb_success >= 0; both_protect_lose if rb_success < 0
 
 @both_protect_win
 go-to: main_rally
 
-The police and Reichsbanner have successfully protected our rally against the SA! Our meeting can go ahead as usual.
+Die Polizei und der Reichsbanner konnten unsere Kundgebung vor der SA beschützen. Unser Treffen kann stattfinden.
 
 @both_protect_lose
 on-arrival: workers_nsdap += 3; rb_strength -= 50
 
-Unfortunately, the police and Reichsbanner were not able to hold back the SA mob. The Nazis have won this show of strength.
+Leider konnte die Polizei und der Reichsbanner die SA nicht zurückhalten. Die Nazis haben diesmal gewonnen.
 
 
 @cancel
 on-arrival: workers_nsdap += 3;
 
-The SA have won this show of strength.
+Die Nazis haben diesmal gewonnen.
 
 @main_rally
 
-Mass rallies are a common feature of social democratic life, especially in the lead-up to an election. What is the primary theme of this rally?
+ Mass rallies are a common feature of social democratic life, especially in the lead-up to an election. What is the primary theme of this rally?
 
 - @class_struggle: The class struggle of the proletariat against the bourgeoisie.
 - @welfare: Sozialpolitik - the maintenance and expansion of social welfare programs.
