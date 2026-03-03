@@ -7,7 +7,7 @@ new-page: true
 
 = Julius Leber
 
-Leber is a former army officer who turned against the military leaders of the Kapp Putsch in 1920, helping us put down the army's attempted coup. He is in favor of expanded democracy and building a broad popular base for the SPD.
+Leber ist ein ehemaliger Offizier, welcher während des Kapp-Putsch in 1920 seine Vorgesetzen verraten hat, um uns die Republik zu verteidigen. Er steht für einen Ausbau der Demokratie und ist für den Aufbau einer breiteren SPD-Basis.
 
 - @democratic_rally
 - @military_affairs
@@ -17,46 +17,46 @@ Leber is a former army officer who turned against the military leaders of the Ka
 - @root: Return to main
 
 @democratic_rally
-title: Rally for democracy
-subtitle: Rally our party and the German people to defend democracy and freedom.
+title: Versammlung für die Demokratie.
+subtitle: Unsere Partei und das deutsche Volk zu Verteidigung der Demokratie und der Freiheit zusammenrufen.
 choose-if: advisor_action_timer == 0 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?]
 on-arrival: advisor_action_timer = 6; pro_republic += 5; democratization += 1; neorevisionist_strength += 5; reformist_strength += 3; workers_spd += 4*(1-dissent) if democratization >= 4; new_middle_spd += 3*(1-dissent) if democratization >= 4
 
-Leber helps us to rally the people in defense of democracy.
+Leber hilft uns die Bevölkerung zur Verteidigung der Demokratie aufzurufen.
 
 @military_affairs
-title: Military affairs
-subtitle: We can set our military policy.
+title: Militärisches
+subtitle: Wir können unsere Verteidigungspolitk bestimmen.
 choose-if: advisor_action_timer == 0 and spd_in_government and reichswehr_minister_party == "SPD"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_in_government : The SPD is not in government. ?][? if reichswehr_minister_party != "SPD": The SPD does not have the Reichswehr ministry. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?][? if not spd_in_government : Die SPD ist nicht in der Regierung. ?][? if reichswehr_minister_party != "SPD": Die SPD kontrolliert das Reichswehrministerium nicht. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: military_policy
 
 @support_peoples_party
-title: Build support for a People's Party
-subtitle: Can we expand our party beyond the industrial working class?
+title: Unterstützung für eine Volkspartei sammeln.
+subtitle: Können wir unsere Partei über die Arbeiterklasse hinaus erweitern?
 view-if: peoples_party = 0
 choose-if: peoples_party_support <= 4 and advisor_action_timer = 0 and peoples_party == 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if peoples_party_support > 4: There is already substantial support for a People's Party. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?][? if peoples_party_support > 4: Es gibt schon genug Unterstützung für eine Volkspartei. ?]
 on-arrival: advisor_action_timer = 6; peoples_party_support += 1
 
-We are building up support for the idea of a People's Party.
+Wir sammeln innerhalb der Partei Unterstüzung für die Idee einer Volkspartei.
 
 @build_peoples_party
-title: Building a People's Party
-subtitle: Can we expand our party beyond the industrial working class?
+title: Eine Volkspartei aufbauen.
+subtitle: Können wir unsere Partei über die Arbeiterklasse hinaus erweitern?
 view-if: peoples_party == 0
 choose-if: peoples_party_support >= 3 and advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if peoples_party_support < 3: There is not enough support for this policy within the party. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?][? if peoples_party_support < 3: Es gibt nicht genügend Unterstützung innerhalb der Partei.. ?]
 on-arrival: advisor_action_timer = 6; last_advisor_action = 1
 go-to: peoples_party
 
 @campaigning_peoples_party
-title: Campaigning as a People's Party
-subtitle: Campaigning with some of our previously nontraditional demographics.
+title: Wahlkampf als Volkspartei
+subtitle: Wahlkampf mit unseren neuen Wählern, welche nicht aus der Arbeiterklasse kommen.
 view-if: peoples_party = 1
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?]
 on-arrival: advisor_action_timer = 6;
 go-to: peoples_party_campaigning
