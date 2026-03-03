@@ -7,7 +7,7 @@ new-page: true
 
 = Marie Juchacz
 
-Juchacz is the founder of the Worker's Welfare, our mutual aid organization; her experiences as a single mother in poverty led her to socialism. She is the most senior woman among the SPD leadership, who is often treated as the "go-to" when the predominantly male leadership sought out womens' voices.
+Juchacz ist Gründerin der Arbeiterwohlfahrt, unserer Wohlfahrtsorganisation; Ihre Erfahrungen als alleinerziehende Mutter in Armut, hat sie zum Sozialismus geführt. Sie ist die älteste Frau in den SPD Führungsriege und wird oft als "die" Repräsentantin für Frauen von den männlichen Vorsitzenden gesehen.  
 
 - @emergency_fundraising
 - @welfare
@@ -15,31 +15,31 @@ Juchacz is the founder of the Worker's Welfare, our mutual aid organization; her
 - @root: Return to main
 
 @emergency_fundraising
-title: Emergency Fundraising
-subtitle: An emergency infusion of resources.
+title: Notfallgelder
+subtitle: Ein Notvorrat an Ressourcen.
 view-if: difficulty < 1
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?]
 on-arrival: advisor_action_timer = 6; resources += dues
 
-We have gained +[+ dues +] resources.
+Wir haben +[+ dues +] Ressourcen gekriegt.
 
 @welfare
-title: Support Workers' Welfare, our mutual aid organization.
-subtitle: -1 resources
+title: Die Arbeiterwohlfahrt unterstützen.
+subtitle: -1 Ressourcen
 choose-if: resources > 0 and advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if resources < 0: Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?][? if resources < 0: Not enough resources. ?]
 on-arrival: resources -= 1; workers_aid += 1; unemployed_spd += 5*(1 - dissent); workers_spd += 3*(1-dissent); workers_spd += 2*(1-dissent) if black_thursday_seen; advisor_action_timer = 6;
 
-We have increased funding to Workers' Welfare. [? if black_thursday_seen > 0 : In an age of economic crisis, this will be helpful for improving our standing among the unemployed. ?]
+Wir haben die Arbeiterwohlfahrt finanziert. [? if black_thursday_seen > 0 : In einer Zeit der Depression, wird das unsere Beliebtheit unter den Arbeitslosen erhöhen. ?]
 
 @organizing_women
-title: Organizing women
-subtitle: Juchacz's strategies are aimed at more "traditional" women.
+title: Frauen organisieren
+subtitle: Juchacz's Strategie fokussiert sich auf "traditionelle" Frauen.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?]
 on-arrival: womens_rights += 1; workers_spd += 4*(1-dissent); rural_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent); advisor_action_timer = 6
 
-Juchacz's strategies for organizing women are aimed at working-class housewives, and acknowledge women's traditional household roles. We argue that our economic welfare programs will improve the livelihoods of women and their families.
+Juchacz's Strategie um Frauen zu organisieren fokussiert sich auf Hausfrauen aus der Arbeiterklassen und akzeptieren die traditionelle Rolle der Frau. Wir argumentieren dass unser soziales Programm das Leben der Frauen und ihrer Familien verbessern wird.
 
-[? if spd_r < 50 : Unfortunately, women still disproportionately support the bourgeois parties. ?]
+[? if spd_r < 50 : Leider wählen Frauen immer noch überdurchschnittlich Bourgeois Parteien. ?]
