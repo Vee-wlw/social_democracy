@@ -7,7 +7,7 @@ new-page: true
 
 = Theodor Leipart
 
-Leipart is a leader of the ADGB, the largest federation of socialist trade unions.
+Leipart ist Vorsitzender des Allgemeinen Deutschen Gewerkschaftsbund (ADGB), der größte Zusammenschluss sozialistischer Gewerkschaften der Welt.
 
 - @organizing
 - @depression
@@ -17,28 +17,28 @@ Leipart is a leader of the ADGB, the largest federation of socialist trade union
 #- @union_unity
 
 @organizing
-title: Organizing workers
-subtitle: Improve our standing among the workers.
+title: Arbeiter organisieren
+subtitle: Unsere Stellung in der Arbeiterklasse verbessern.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?]
 on-arrival: advisor_action_timer = 6; workers_spd += 4*(1-dissent); workers_spd += 3*(1-dissent) if wtb_adopted == 1; labor_strength += 2;
 
-We have increased our organizing among the workers.
+Wir organisieren uns vermehrt innerhalb der Arbeiterklasse.
 
 @depression
-title: Addressing the economic crisis
-subtitle: Formulate a plan to get us out of this mess.
+title: Die Wirtschaftskrise angehen. 
+subtitle: Formuliere einen Plan um uns aus dieser Krise zu holen.
 choose-if: advisor_action_timer <= 0 and wtb_adopted = 0 and black_thursday_seen
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if black_thursday_seen == 0 : We are not currently in an economic crisis. ?][? if wtb_adopted > 0 : We have already adopted the WTB-Plan. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?][? if black_thursday_seen == 0 : Wir befinden uns gerade nicht in einer Wirtschaftskrise . ?][? if wtb_adopted > 0 : Wir haben den WTB-Plan schon angenommen. ?]
 on-arrival: advisor_action_timer = 6; wtb_support += 2; center_dissent += 10; labor_strength += 1
 
-The WTB-Plan, standing for its primary supporters Woytinsky, Tarnow, and Baade, has been adopted as the unions' plan for getting us out of the depression. Leipart canvasses in favor of this policy throughout the party and the unions.
+Der WTB-Plan, benannt nach seinen größten Unterstützern Woytinsky, Tarnow, und Baade, wurde als Programm gegen die Depression von den Gewerkschaften angenommen. Leipart wirbt innerhalb der Partei für den WTB-Plan.
 
 @union_unity
-title: Union-party coordination
-subtitle: Reduce dissent among the unions.
+title: Gewerkschaft-Partei Koordination
+subtitle: Reduziere die Abtrünnigkeit der Gewerkschaften.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?]
 on-arrival: advisor_action_timer = 6; labor_dissent -= 5; labor_strength += 5
 
-We have reduced tensions with the Labor faction, and increased its strength in the party.
+Wir haben Spannung mit der Gewerkschaftsfraktion reduziert und ihre Stellung innerhalb der Partei gestärkt.
