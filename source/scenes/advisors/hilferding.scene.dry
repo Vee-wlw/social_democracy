@@ -19,7 +19,7 @@ Hilferding ist ein Ökonomist und ein Schüler von Karl Kautsky. Er kommt urspr�
 @against_right_and_left
 title: Gegen Rechts und Links
 subtitle: Als ein Zentrist versucht Hilferding Kompromisse zwischen den Fraktionen zu finden.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?]
 choose-if: advisor_action_timer = 0
 on-arrival: advisor_action_timer = 5; advisor_action_time = time; center_strength += 10; left_strength -= 5; labor_strength -= 5; neorevisionist_strength -= 5; center_dissent -= 10
 
@@ -28,16 +28,16 @@ Wir haben die Stärke der abtrünnigen Fraktionen reduziert.
 @toleration
 title: Die Toleranz verteidigen
 subtitle: Hilferding unterstützt Kooperation mit den Bourgeois Parteien.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?][? if not spd_toleration: Die SPD toleriert nicht die Regierung. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?][? if not spd_toleration: Die SPD toleriert nicht die Regierung. ?]
 choose-if: spd_in_government = 0 and spd_toleration = 1 and advisor_action_timer = 0
 on-arrival: advisor_action_timer = 6; left_dissent -= 10; neorevisionist_dissent -= 8; center_dissent -= 5
 
-We have reduced dissent among the anti-toleration factions.
+Wir haben die Abtrünnigkeit der Ant-Toleranz Fraktionen reduziert.
 
 @finance_ministry_
 title: Finanzpolitik
 subtitle: Als Finanzminister kann Hilferding Steuerpolitik betreiben.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : Die SPD ist nicht in der Regierung: ?] [? if finance_minister_party != "SPD" : Die SPD kontrolliert nicht das Finanzministerium. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?] [? if spd_in_government = 0 : Die SPD ist nicht in der Regierung: ?] [? if finance_minister_party != "SPD" : Die SPD kontrolliert nicht das Finanzministerium. ?]
 choose-if: advisor_action_timer == 0 and spd_in_government == 1 and finance_minister_party == "SPD"
 on-arrival: advisor_action_timer = 6; fiscal_policy_timer -= 6; last_advisor_action = 1
 go-to: fiscal_policy
@@ -45,7 +45,7 @@ go-to: fiscal_policy
 @economic_democracy_
 title: Wirtschaftliche Demokratie
 subtitle: Erlasse Gesetze um eine demokratische Wirtschaft aufzubauen.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?] [? if spd_in_government = 0 : Die SPD ist nicht in der Regierung: ?] [? if labor_minister_party != "SPD" or (finance_minister_party != "SPD" and economic_minister_party != "SPD") : Wir haben nicht die nötigen Ministerien. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] Monate vor der nächsten Aktion. ?] [? if spd_in_government = 0 : Die SPD ist nicht in der Regierung: ?] [? if labor_minister_party != "SPD" or (finance_minister_party != "SPD" and economic_minister_party != "SPD") : Wir haben nicht die nötigen Ministerien. ?]
 choose-if: advisor_action_timer == 0 and spd_in_government == 1 and (economic_minister_party == "SPD" or finance_minister_party == "SPD") and (labor_minister_party == "SPD")
 on-arrival: advisor_action_timer = 6; economic_democracy_timer -= 10; last_advisor_action = 1
 go-to: economic_democracy
